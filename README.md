@@ -1,2 +1,2 @@
-# Rh-ne-Destination-Brief
+# Rhone-Destination-Brief
 Rhône Destination Brief
