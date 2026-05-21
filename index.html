@@ -193,20 +193,17 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);f
 .ov strong,.overview strong{font-weight:600;color:var(--ink);}
 .ov .chips,.overview .chips{font-size:10.5px;margin-top:.9rem;}
 
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px;margin-top:.6rem;}
-.pg-img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:pointer;transition:opacity .15s;}
-.pg-img:hover{opacity:.82;}
-#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9999;align-items:center;justify-content:center;flex-direction:column;}
-#lb.on{display:flex;}
-#lb-wrap{display:flex;align-items:center;justify-content:center;width:100%;flex:1;overflow:auto;-webkit-overflow-scrolling:touch;}
-#lb-img{max-width:100%;max-height:88vh;object-fit:contain;touch-action:pinch-zoom;user-select:none;}
-#lb-x{position:fixed;top:14px;right:18px;color:#fff;font-size:30px;cursor:pointer;line-height:1;z-index:10000;opacity:.8;}
-#lb-x:hover{opacity:1;}
-#lb-p,#lb-n{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:38px;cursor:pointer;padding:10px 14px;z-index:10000;background:rgba(0,0,0,.28);border-radius:4px;line-height:1;opacity:.75;}
-#lb-p:hover,#lb-n:hover{opacity:1;}
-#lb-p{left:6px;}
-#lb-n{right:6px;}
-#lb-c{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:12px;letter-spacing:.06em;}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:4px;}
+.pg-img{width:100%;aspect-ratio:3/2;object-fit:cover;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent;}
+#lb{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.95);z-index:99999;}
+#lb.on{display:block;}
+#lb-inner{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;}
+#lb-img{max-width:100vw;max-height:100vh;width:auto;height:auto;object-fit:contain;touch-action:pinch-zoom;display:block;}
+#lb-x{position:fixed;top:12px;right:16px;color:#fff;font-size:32px;cursor:pointer;z-index:100000;line-height:1;padding:8px;background:rgba(0,0,0,.4);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;-webkit-tap-highlight-color:transparent;}
+#lb-p,#lb-n{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:44px;cursor:pointer;z-index:100000;padding:12px 16px;background:rgba(0,0,0,.35);line-height:1;-webkit-tap-highlight-color:transparent;}
+#lb-p{left:0;border-radius:0 4px 4px 0;}
+#lb-n{right:0;border-radius:4px 0 0 4px;}
+#lb-c{position:fixed;bottom:16px;left:0;right:0;text-align:center;color:rgba(255,255,255,.55);font-size:13px;}
 </style>
 </head>
 <body>
@@ -260,12 +257,12 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);f
 <p>His letters to his brother Théo are among the most extensive primary sources on any artist's working process — 820 letters survive, covering colour theory, composition decisions, his reading, his health, and his relationship with specific landscapes. The complete correspondence is published in English translation by the Van Gogh Museum (Amsterdam, 2009) and is freely searchable at vangoghletters.org.</p></div>
 </div></div></div></div></div>
 
-<div id="lb" onclick="if(event.target===this||event.target.id==='lb-wrap')closeLB()">
-  <span id="lb-x" onclick="closeLB()">✕</span>
-  <span id="lb-p" onclick="lbNav(-1)">&#8249;</span>
-  <div id="lb-wrap"><img id="lb-img" src="" alt=""></div>
-  <span id="lb-n" onclick="lbNav(1)">&#8250;</span>
-  <span id="lb-c"></span>
+<div id="lb">
+  <div id="lb-inner"><img id="lb-img" src="" alt=""></div>
+  <span id="lb-x">✕</span>
+  <span id="lb-p">&#8249;</span>
+  <span id="lb-n">&#8250;</span>
+  <div id="lb-c"></div>
 </div>
 </main>
 </div>
@@ -311,10 +308,10 @@ body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);f
 <div class="tc-body">
 <div class="cb" style="padding:0;overflow:hidden;border-radius:var(--border-radius-lg) var(--border-radius-lg) 0 0;margin:-1rem -1rem .5rem -1rem;">
 <div class="pg" data-tour="day2-oldlyon" style="gap:3px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));">
-<img src="Photos/day2-oldlyon-1.png" class="pg-img" onclick="openLB(this)" loading="lazy" onerror="this.style.display='none'" alt="">
-<img src="Photos/day2-oldlyon-2.png" class="pg-img" onclick="openLB(this)" loading="lazy" onerror="this.style.display='none'" alt="">
-<img src="Photos/day2-oldlyon-3.png" class="pg-img" onclick="openLB(this)" loading="lazy" onerror="this.style.display='none'" alt="">
-<img src="Photos/day2-oldlyon-4.png" class="pg-img" onclick="openLB(this)" loading="lazy" onerror="this.style.display='none'" alt="">
+<img src="Photos/day2-oldlyon-1.png" class="pg-img" loading="lazy" onerror="this.style.display='none'" alt="">
+<img src="Photos/day2-oldlyon-2.png" class="pg-img" loading="lazy" onerror="this.style.display='none'" alt="">
+<img src="Photos/day2-oldlyon-3.png" class="pg-img" loading="lazy" onerror="this.style.display='none'" alt="">
+<img src="Photos/day2-oldlyon-4.png" class="pg-img" loading="lazy" onerror="this.style.display='none'" alt="">
 </div></div>
 
  
@@ -1032,24 +1029,53 @@ function showDay(n, btn){
 
 function toggleRH(hdr){hdr.closest('.rh-item').classList.toggle('open');}
 
-var _li=[],_lx=0;
-function openLB(img){
-  var pg=img.closest('.pg');
-  _li=Array.from(pg.querySelectorAll('.pg-img')).filter(function(i){return i.style.display!=='none';});
-  _lx=_li.indexOf(img);
-  _showLB();
+// ── Lightbox ──────────────────────────────────────────────────────────────
+var _li=[],_lx=0,_tx=0,_swipe=false;
+function _lbOpen(idx,imgs){
+  _li=imgs; _lx=idx;
+  _lbShow();
   document.getElementById('lb').classList.add('on');
   document.body.style.overflow='hidden';
 }
-function _showLB(){
-  document.getElementById('lb-img').src=_li[_lx].src;
-  document.getElementById('lb-c').textContent=(_lx+1)+' / '+_li.length;
+function _lbShow(){
+  var el=document.getElementById('lb-img');
+  el.src='';
+  el.src=_li[_lx].src;
+  document.getElementById('lb-c').textContent=(_lx+1)+' — '+_li.length;
 }
 function closeLB(){
   document.getElementById('lb').classList.remove('on');
   document.body.style.overflow='';
 }
-function lbNav(d){_lx=(_lx+d+_li.length)%_li.length;_showLB();}
+function lbNav(d){_lx=(_lx+d+_li.length)%_li.length;_lbShow();}
+
+// Wire up clicks via event delegation (works on mobile)
+document.addEventListener('click',function(e){
+  var img=e.target.closest('.pg-img');
+  if(img){
+    var pg=img.closest('.pg');
+    var imgs=Array.from(pg.querySelectorAll('.pg-img')).filter(function(i){return i.style.display!=='none';});
+    _lbOpen(imgs.indexOf(img),imgs);
+    return;
+  }
+  if(e.target.id==='lb-x'||e.target.id==='lb-inner'||e.target.id==='lb'){closeLB();return;}
+  if(e.target.id==='lb-p'){lbNav(-1);return;}
+  if(e.target.id==='lb-n'){lbNav(1);return;}
+});
+
+// Swipe support in lightbox
+document.getElementById? document.addEventListener('DOMContentLoaded',function(){
+  var lb=document.getElementById('lb');
+  if(!lb)return;
+  lb.addEventListener('touchstart',function(e){_tx=e.touches[0].clientX;_swipe=true;},{passive:true});
+  lb.addEventListener('touchend',function(e){
+    if(!_swipe)return; _swipe=false;
+    var dx=e.changedTouches[0].clientX-_tx;
+    if(Math.abs(dx)>50){lbNav(dx<0?1:-1);}
+  },{passive:true});
+}):null;
+
+// Keyboard
 document.addEventListener('keydown',function(e){
   if(!document.getElementById('lb').classList.contains('on'))return;
   if(e.key==='ArrowLeft')lbNav(-1);
